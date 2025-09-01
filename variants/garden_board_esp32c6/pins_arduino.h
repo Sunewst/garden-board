@@ -6,7 +6,14 @@
 
 
 #define MUX_I2C_POWER     14
-#define PIN_MUX_I2C_POWER 14 
+#define PIN_MUX_I2C_POWER 14
+
+static const uint8_t SS = 19;
+static const uint8_t MOSI = 20;
+static const uint8_t SCK = 21;
+static const uint8_t MISO = 22;
+
+
 
 static const uint8_t TX = 16;
 static const uint8_t RX = 17;
@@ -27,4 +34,4 @@ static const uint8_t A4 = 3;
 static const uint8_t A5 = 2;
 static const uint8_t A6 = 0;
 
-#endif /* Pins_Arduino_h */
+#endif
