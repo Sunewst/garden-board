@@ -389,3 +389,352 @@ garden_board_esp32c6_revision.menu.ZigbeeMode.ed.build.zigbee_libs=-lesp_zb_api.
 garden_board_esp32c6_revision.menu.ZigbeeMode.zczr=Zigbee ZCZR (coordinator/router)
 garden_board_esp32c6_revision.menu.ZigbeeMode.zczr.build.zigbee_mode=-DZIGBEE_MODE_ZCZR
 garden_board_esp32c6_revision.menu.ZigbeeMode.zczr.build.zigbee_libs=-lesp_zb_api.zczr -lzboss_stack.zczr -lzboss_port.native
+
+#############################
+# Feather C6 Debug
+
+
+adafruit_feather_esp32c6_debug.name=Adafruit Feather ESP32-C6 Debug
+
+adafruit_feather_esp32c6_debug.bootloader.tool=esptool_py
+adafruit_feather_esp32c6_debug.bootloader.tool.default=esptool_py
+
+adafruit_feather_esp32c6_debug.upload.tool=esptool_py
+adafruit_feather_esp32c6_debug.upload.tool.default=esptool_py
+adafruit_feather_esp32c6_debug.upload.tool.network=esp_ota
+
+adafruit_feather_esp32c6_debug.upload.maximum_size=1310720
+adafruit_feather_esp32c6_debug.upload.maximum_data_size=327680
+adafruit_feather_esp32c6_debug.upload.flags=
+adafruit_feather_esp32c6_debug.upload.extra_flags=
+adafruit_feather_esp32c6_debug.upload.use_1200bps_touch=false
+adafruit_feather_esp32c6_debug.upload.wait_for_upload_port=false
+
+adafruit_feather_esp32c6_debug.serial.disableDTR=false
+adafruit_feather_esp32c6_debug.serial.disableRTS=false
+
+adafruit_feather_esp32c6_debug.build.tarch=riscv32
+adafruit_feather_esp32c6_debug.build.target=esp
+adafruit_feather_esp32c6_debug.build.mcu=esp32c6
+adafruit_feather_esp32c6_debug.build.core=esp32
+adafruit_feather_esp32c6_debug.build.variant=adafruit_feather_esp32c6_debug
+adafruit_feather_esp32c6_debug.build.board=ADAFRUIT_FEATHER_ESP32C6_DEBUG
+adafruit_feather_esp32c6_debug.build.bootloader_addr=0x0
+
+adafruit_feather_esp32c6_debug.build.cdc_on_boot=0
+adafruit_feather_esp32c6_debug.build.f_cpu=160000000L
+adafruit_feather_esp32c6_debug.build.flash_size=4MB
+adafruit_feather_esp32c6_debug.build.flash_freq=80m
+adafruit_feather_esp32c6_debug.build.flash_mode=qio
+adafruit_feather_esp32c6_debug.build.boot=qio
+adafruit_feather_esp32c6_debug.build.partitions=default
+adafruit_feather_esp32c6_debug.build.defines=
+
+## IDE 2.0 Seems to not update the value
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.default=Disabled
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.default.build.copy_jtag_files=0
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.builtin=Integrated USB JTAG
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.builtin.build.openocdscript=esp32c6-builtin.cfg
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.builtin.build.copy_jtag_files=1
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.external=FTDI Adapter
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.external.build.openocdscript=esp32c6-ftdi.cfg
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.external.build.copy_jtag_files=1
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.bridge=ESP USB Bridge
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.bridge.build.openocdscript=esp32c6-bridge.cfg
+adafruit_feather_esp32c6_debug.menu.JTAGAdapter.bridge.build.copy_jtag_files=1
+
+adafruit_feather_esp32c6_debug.menu.CDCOnBoot.default=Disabled
+adafruit_feather_esp32c6_debug.menu.CDCOnBoot.default.build.cdc_on_boot=0
+adafruit_feather_esp32c6_debug.menu.CDCOnBoot.cdc=Enabled
+adafruit_feather_esp32c6_debug.menu.CDCOnBoot.cdc.build.cdc_on_boot=1
+
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.default.build.partitions=default
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.defaultffat=Default 4MB with ffat (1.2MB APP/1.5MB FATFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.defaultffat.build.partitions=default_ffat
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.minimal=Minimal (1.3MB APP/700KB SPIFFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.minimal.build.partitions=minimal
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.no_ota=No OTA (2MB APP/2MB SPIFFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.no_ota.build.partitions=no_ota
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.no_ota.upload.maximum_size=2097152
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_3g=No OTA (1MB APP/3MB SPIFFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_3g.build.partitions=noota_3g
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_3g.upload.maximum_size=1048576
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_ffat=No OTA (2MB APP/2MB FATFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_ffat.build.partitions=noota_ffat
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_ffat.upload.maximum_size=2097152
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_3gffat=No OTA (1MB APP/3MB FATFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_3gffat.build.partitions=noota_3gffat
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.noota_3gffat.upload.maximum_size=1048576
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.huge_app=Huge APP (3MB No OTA/1MB SPIFFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.huge_app.build.partitions=huge_app
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.huge_app.upload.maximum_size=3145728
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.min_spiffs=Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.min_spiffs.build.partitions=min_spiffs
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.min_spiffs.upload.maximum_size=1966080
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.rainmaker=RainMaker 4MB
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.rainmaker.build.partitions=rainmaker
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.rainmaker.upload.maximum_size=1966080
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.rainmaker_4MB=RainMaker 4MB No OTA
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.rainmaker_4MB.build.partitions=rainmaker_4MB_no_ota
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.rainmaker_4MB.upload.maximum_size=4038656
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.zigbee=Zigbee 4MB with spiffs
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.zigbee.build.partitions=zigbee
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.zigbee.upload.maximum_size=1310720
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.zigbee_zczr=Zigbee ZCZR 4MB with spiffs
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.zigbee_zczr.build.partitions=zigbee_zczr
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.zigbee_zczr.upload.maximum_size=1310720
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.custom=Custom
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.custom.build.partitions=
+adafruit_feather_esp32c6_debug.menu.PartitionScheme.custom.upload.maximum_size=4194304
+
+adafruit_feather_esp32c6_debug.menu.CPUFreq.160=160MHz (WiFi)
+adafruit_feather_esp32c6_debug.menu.CPUFreq.160.build.f_cpu=160000000L
+adafruit_feather_esp32c6_debug.menu.CPUFreq.120=120MHz (WiFi)
+adafruit_feather_esp32c6_debug.menu.CPUFreq.120.build.f_cpu=120000000L
+adafruit_feather_esp32c6_debug.menu.CPUFreq.80=80MHz (WiFi)
+adafruit_feather_esp32c6_debug.menu.CPUFreq.80.build.f_cpu=80000000L
+adafruit_feather_esp32c6_debug.menu.CPUFreq.40=40MHz
+adafruit_feather_esp32c6_debug.menu.CPUFreq.40.build.f_cpu=40000000L
+adafruit_feather_esp32c6_debug.menu.CPUFreq.20=20MHz
+adafruit_feather_esp32c6_debug.menu.CPUFreq.20.build.f_cpu=20000000L
+adafruit_feather_esp32c6_debug.menu.CPUFreq.10=10MHz
+adafruit_feather_esp32c6_debug.menu.CPUFreq.10.build.f_cpu=10000000L
+
+adafruit_feather_esp32c6_debug.menu.FlashMode.qio=QIO
+adafruit_feather_esp32c6_debug.menu.FlashMode.qio.build.flash_mode=dio
+adafruit_feather_esp32c6_debug.menu.FlashMode.qio.build.boot=qio
+adafruit_feather_esp32c6_debug.menu.FlashMode.dio=DIO
+adafruit_feather_esp32c6_debug.menu.FlashMode.dio.build.flash_mode=dio
+adafruit_feather_esp32c6_debug.menu.FlashMode.dio.build.boot=dio
+
+adafruit_feather_esp32c6_debug.menu.FlashFreq.80=80MHz
+adafruit_feather_esp32c6_debug.menu.FlashFreq.80.build.flash_freq=80m
+adafruit_feather_esp32c6_debug.menu.FlashFreq.40=40MHz
+adafruit_feather_esp32c6_debug.menu.FlashFreq.40.build.flash_freq=40m
+
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.921600=921600
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.921600.upload.speed=921600
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.115200=115200
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.115200.upload.speed=115200
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.256000.windows=256000
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.256000.upload.speed=256000
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.230400.windows.upload.speed=256000
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.230400=230400
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.230400.upload.speed=230400
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.460800.linux=460800
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.460800.macosx=460800
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.460800.upload.speed=460800
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.512000.windows=512000
+adafruit_feather_esp32c6_debug.menu.UploadSpeed.512000.upload.speed=512000
+
+adafruit_feather_esp32c6_debug.menu.DebugLevel.none=None
+adafruit_feather_esp32c6_debug.menu.DebugLevel.none.build.code_debug=0
+adafruit_feather_esp32c6_debug.menu.DebugLevel.error=Error
+adafruit_feather_esp32c6_debug.menu.DebugLevel.error.build.code_debug=1
+adafruit_feather_esp32c6_debug.menu.DebugLevel.warn=Warn
+adafruit_feather_esp32c6_debug.menu.DebugLevel.warn.build.code_debug=2
+adafruit_feather_esp32c6_debug.menu.DebugLevel.info=Info
+adafruit_feather_esp32c6_debug.menu.DebugLevel.info.build.code_debug=3
+adafruit_feather_esp32c6_debug.menu.DebugLevel.debug=Debug
+adafruit_feather_esp32c6_debug.menu.DebugLevel.debug.build.code_debug=4
+adafruit_feather_esp32c6_debug.menu.DebugLevel.verbose=Verbose
+adafruit_feather_esp32c6_debug.menu.DebugLevel.verbose.build.code_debug=5
+
+adafruit_feather_esp32c6_debug.menu.EraseFlash.none=Disabled
+adafruit_feather_esp32c6_debug.menu.EraseFlash.none.upload.erase_cmd=
+adafruit_feather_esp32c6_debug.menu.EraseFlash.all=Enabled
+adafruit_feather_esp32c6_debug.menu.EraseFlash.all.upload.erase_cmd=-e
+
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.default=Disabled
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.default.build.zigbee_mode=
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.default.build.zigbee_libs=
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.ed=Zigbee ED (end device)
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.ed.build.zigbee_mode=-DZIGBEE_MODE_ED
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.ed.build.zigbee_libs=-lesp_zb_api.ed -lzboss_stack.ed -lzboss_port.native
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.zczr=Zigbee ZCZR (coordinator/router)
+adafruit_feather_esp32c6_debug.menu.ZigbeeMode.zczr.build.zigbee_mode=-DZIGBEE_MODE_ZCZR
+adafruit_feather_esp32c6_debug_debug.menu.ZigbeeMode.zczr.build.zigbee_libs=-lesp_zb_api.zczr -lzboss_stack.zczr -lzboss_port.native
+
+##############################################################
+# Adafruit QT Py ESP32-S2 Debug
+
+adafruit_qtpy_esp32s2_debug.name=Adafruit QT Py ESP32-S2 Debug
+adafruit_qtpy_esp32s2_debug.vid.0=0x239A
+adafruit_qtpy_esp32s2_debug.pid.0=0x8111
+adafruit_qtpy_esp32s2_debug.vid.1=0x239A
+adafruit_qtpy_esp32s2_debug.pid.1=0x0111
+adafruit_qtpy_esp32s2_debug.vid.2=0x239A
+adafruit_qtpy_esp32s2_debug.pid.2=0x8112
+adafruit_qtpy_esp32s2_debug.upload_port.0.vid=0x239A
+adafruit_qtpy_esp32s2_debug.upload_port.0.pid=0x8111
+adafruit_qtpy_esp32s2_debug.upload_port.1.vid=0x239A
+adafruit_qtpy_esp32s2_debug.upload_port.1.pid=0x0111
+adafruit_qtpy_esp32s2_debug.upload_port.2.vid=0x239A
+adafruit_qtpy_esp32s2_debug.upload_port.2.pid=0x8112
+
+adafruit_qtpy_esp32s2_debug.bootloader.tool=esptool_py
+adafruit_qtpy_esp32s2_debug.bootloader.tool.default=esptool_py
+
+adafruit_qtpy_esp32s2_debug.upload.tool=esptool_py
+adafruit_qtpy_esp32s2_debug.upload.tool.default=esptool_py
+adafruit_qtpy_esp32s2_debug.upload.tool.network=esp_ota
+
+adafruit_qtpy_esp32s2_debug.upload.maximum_size=1310720
+adafruit_qtpy_esp32s2_debug.upload.maximum_data_size=327680
+adafruit_qtpy_esp32s2_debug.upload.flags=
+adafruit_qtpy_esp32s2_debug.upload.extra_flags=
+adafruit_qtpy_esp32s2_debug.upload.use_1200bps_touch=true
+adafruit_qtpy_esp32s2_debug.upload.wait_for_upload_port=true
+
+adafruit_qtpy_esp32s2_debug.serial.disableDTR=false
+adafruit_qtpy_esp32s2_debug.serial.disableRTS=false
+
+adafruit_qtpy_esp32s2_debug.build.tarch=xtensa
+adafruit_qtpy_esp32s2_debug.build.bootloader_addr=0x1000
+adafruit_qtpy_esp32s2_debug.build.target=esp32s2
+adafruit_qtpy_esp32s2_debug.build.mcu=esp32s2
+adafruit_qtpy_esp32s2_debug.build.core=esp32
+adafruit_qtpy_esp32s2_debug.build.variant=adafruit_qtpy_esp32s2_debug
+adafruit_qtpy_esp32s2_debug.build.board=ADAFRUIT_QTPY_ESP32S2_DEBUG
+
+adafruit_qtpy_esp32s2_debug.build.cdc_on_boot=1
+adafruit_qtpy_esp32s2_debug.build.msc_on_boot=0
+adafruit_qtpy_esp32s2_debug.build.dfu_on_boot=0
+adafruit_qtpy_esp32s2_debug.build.f_cpu=240000000L
+adafruit_qtpy_esp32s2_debug.build.flash_size=4MB
+adafruit_qtpy_esp32s2_debug.build.flash_freq=80m
+adafruit_qtpy_esp32s2_debug.build.flash_mode=dio
+adafruit_qtpy_esp32s2_debug.build.boot=qio
+adafruit_qtpy_esp32s2_debug.build.partitions=default
+adafruit_qtpy_esp32s2_debug.build.defines=
+
+adafruit_qtpy_esp32s2_debug.menu.CDCOnBoot.cdc=Enabled
+adafruit_qtpy_esp32s2_debug.menu.CDCOnBoot.cdc.build.cdc_on_boot=1
+adafruit_qtpy_esp32s2_debug.menu.CDCOnBoot.default=Disabled
+adafruit_qtpy_esp32s2_debug.menu.CDCOnBoot.default.build.cdc_on_boot=0
+
+adafruit_qtpy_esp32s2_debug.menu.MSCOnBoot.default=Disabled
+adafruit_qtpy_esp32s2_debug.menu.MSCOnBoot.default.build.msc_on_boot=0
+adafruit_qtpy_esp32s2_debug.menu.MSCOnBoot.msc=Enabled
+adafruit_qtpy_esp32s2_debug.menu.MSCOnBoot.msc.build.msc_on_boot=1
+
+adafruit_qtpy_esp32s2_debug.menu.DFUOnBoot.default=Disabled
+adafruit_qtpy_esp32s2_debug.menu.DFUOnBoot.default.build.dfu_on_boot=0
+adafruit_qtpy_esp32s2_debug.menu.DFUOnBoot.dfu=Enabled
+adafruit_qtpy_esp32s2_debug.menu.DFUOnBoot.dfu.build.dfu_on_boot=1
+
+adafruit_qtpy_esp32s2_debug.menu.UploadMode.cdc=Internal USB
+adafruit_qtpy_esp32s2_debug.menu.UploadMode.cdc.upload.use_1200bps_touch=true
+adafruit_qtpy_esp32s2_debug.menu.UploadMode.cdc.upload.wait_for_upload_port=true
+adafruit_qtpy_esp32s2_debug.menu.UploadMode.default=UART0
+adafruit_qtpy_esp32s2_debug.menu.UploadMode.default.upload.use_1200bps_touch=false
+adafruit_qtpy_esp32s2_debug.menu.UploadMode.default.upload.wait_for_upload_port=false
+
+adafruit_qtpy_esp32s2_debug.menu.PSRAM.enabled=Enabled
+adafruit_qtpy_esp32s2_debug.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
+adafruit_qtpy_esp32s2_debug.menu.PSRAM.disabled=Disabled
+adafruit_qtpy_esp32s2_debug.menu.PSRAM.disabled.build.defines=
+
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2_noota=TinyUF2 4MB No OTA (2.7MB APP/960KB FATFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2_noota.build.custom_bootloader=bootloader-tinyuf2
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2_noota.build.partitions=tinyuf2-partitions-4MB-noota
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2_noota.upload.maximum_size=2883584
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2_noota.upload.extra_flags=0x2d0000 "{runtime.platform.path}/variants/{build.variant}/tinyuf2.bin"
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2=TinyUF2 4MB (1.3MB APP/960KB FATFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2.build.custom_bootloader=bootloader-tinyuf2
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2.build.partitions=tinyuf2-partitions-4MB
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2.upload.maximum_size=1441792
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.tinyuf2.upload.extra_flags=0x2d0000 "{runtime.platform.path}/variants/{build.variant}/tinyuf2.bin"
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.default.build.partitions=default
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.defaultffat=Default 4MB with ffat (1.2MB APP/1.5MB FATFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.defaultffat.build.partitions=default_ffat
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.minimal=Minimal (1.3MB APP/700KB SPIFFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.minimal.build.partitions=minimal
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.no_ota=No OTA (2MB APP/2MB SPIFFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.no_ota.build.partitions=no_ota
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.no_ota.upload.maximum_size=2097152
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_3g=No OTA (1MB APP/3MB SPIFFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_3g.build.partitions=noota_3g
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_3g.upload.maximum_size=1048576
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_ffat=No OTA (2MB APP/2MB FATFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_ffat.build.partitions=noota_ffat
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_ffat.upload.maximum_size=2097152
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_3gffat=No OTA (1MB APP/3MB FATFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_3gffat.build.partitions=noota_3gffat
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.noota_3gffat.upload.maximum_size=1048576
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.huge_app=Huge APP (3MB No OTA/1MB SPIFFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.huge_app.build.partitions=huge_app
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.huge_app.upload.maximum_size=3145728
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.min_spiffs=Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.min_spiffs.build.partitions=min_spiffs
+adafruit_qtpy_esp32s2_debug.menu.PartitionScheme.min_spiffs.upload.maximum_size=1966080
+
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.240=240MHz (WiFi)
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.240.build.f_cpu=240000000L
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.160=160MHz (WiFi)
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.160.build.f_cpu=160000000L
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.80=80MHz (WiFi)
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.80.build.f_cpu=80000000L
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.40=40MHz
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.40.build.f_cpu=40000000L
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.20=20MHz
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.20.build.f_cpu=20000000L
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.10=10MHz
+adafruit_qtpy_esp32s2_debug.menu.CPUFreq.10.build.f_cpu=10000000L
+
+adafruit_qtpy_esp32s2_debug.menu.FlashMode.qio=QIO
+adafruit_qtpy_esp32s2_debug.menu.FlashMode.qio.build.flash_mode=dio
+adafruit_qtpy_esp32s2_debug.menu.FlashMode.qio.build.boot=qio
+adafruit_qtpy_esp32s2_debug.menu.FlashMode.dio=DIO
+adafruit_qtpy_esp32s2_debug.menu.FlashMode.dio.build.flash_mode=dio
+adafruit_qtpy_esp32s2_debug.menu.FlashMode.dio.build.boot=dio
+
+adafruit_qtpy_esp32s2_debug.menu.FlashFreq.80=80MHz
+adafruit_qtpy_esp32s2_debug.menu.FlashFreq.80.build.flash_freq=80m
+adafruit_qtpy_esp32s2_debug.menu.FlashFreq.40=40MHz
+adafruit_qtpy_esp32s2_debug.menu.FlashFreq.40.build.flash_freq=40m
+
+adafruit_qtpy_esp32s2_debug.menu.FlashSize.4M=4MB (32Mb)
+adafruit_qtpy_esp32s2_debug.menu.FlashSize.4M.build.flash_size=4MB
+
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.921600=921600
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.921600.upload.speed=921600
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.115200=115200
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.115200.upload.speed=115200
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.256000.windows=256000
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.256000.upload.speed=256000
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.230400.windows.upload.speed=256000
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.230400=230400
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.230400.upload.speed=230400
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.460800.linux=460800
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.460800.macosx=460800
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.460800.upload.speed=460800
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.512000.windows=512000
+adafruit_qtpy_esp32s2_debug.menu.UploadSpeed.512000.upload.speed=512000
+
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.none=None
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.none.build.code_debug=0
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.error=Error
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.error.build.code_debug=1
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.warn=Warn
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.warn.build.code_debug=2
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.info=Info
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.info.build.code_debug=3
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.debug=Debug
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.debug.build.code_debug=4
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.verbose=Verbose
+adafruit_qtpy_esp32s2_debug.menu.DebugLevel.verbose.build.code_debug=5
+
+adafruit_qtpy_esp32s2_debug.menu.EraseFlash.none=Disabled
+adafruit_qtpy_esp32s2_debug.menu.EraseFlash.none.upload.erase_cmd=
+adafruit_qtpy_esp32s2_debug.menu.EraseFlash.all=Enabled
+adafruit_qtpy_esp32s2_debug.menu.EraseFlash.all.upload.erase_cmd=-e
+
+adafruit_qtpy_esp32s2_debug.menu.ZigbeeMode.default=Disabled
+adafruit_qtpy_esp32s2_debug.menu.ZigbeeMode.default.build.zigbee_mode=
+adafruit_qtpy_esp32s2_debug.menu.ZigbeeMode.default.build.zigbee_libs=
+adafruit_qtpy_esp32s2_debug.menu.ZigbeeMode.zczr=Zigbee ZCZR (coordinator/router)
+adafruit_qtpy_esp32s2_debug.menu.ZigbeeMode.zczr.build.zigbee_mode=-DZIGBEE_MODE_ZCZR
+adafruit_qtpy_esp32s2_debug.menu.ZigbeeMode.zczr.build.zigbee_libs=-lesp_zb_api.zczr -lzboss_stack.zczr -lzboss_port.remote
